@@ -2,7 +2,7 @@
 
 A Python implementation of a hybrid semantic memory system that stores conversational history and retrieves the most relevant past interactions using embeddings, adaptive memory management, and hybrid relevance scoring.
 
-## 🚀 Quick Start
+## Quick Start
 
 ```bash
 
@@ -23,7 +23,7 @@ The implementation follows a modular architecture separating storage, indexing, 
 
 ---
 
-# 🎯 Problem Approach
+# Problem Approach
 
 The system was designed around a core question:
 
@@ -40,7 +40,7 @@ This project combines these signals into a hybrid retrieval model.
 
 ---
 
-# 🧱 Architecture Overview
+# Architecture Overview
 
 The system is divided into clearly defined components:
 
@@ -60,7 +60,7 @@ Each component has a single responsibility, ensuring clarity and extensibility.
 
 ---
 
-## 1️⃣ Message (@dataclass)
+## Message (@dataclass)
 
 Represents a single chat entry.
 
@@ -79,7 +79,7 @@ Design rationale:
 
 ---
 
-## 2️⃣ ImportanceCalculator
+## ImportanceCalculator
 
 Assigns an importance score using lightweight heuristics:
 
@@ -94,7 +94,7 @@ Purpose:
 
 ---
 
-## 3️⃣ Vectorizer (State-Aware)
+## Vectorizer (State-Aware)
 
 Responsible for generating semantic embeddings using Sentence Transformers.
 
@@ -110,7 +110,7 @@ Embedding generation is centralized to ensure consistency and reduce redundant c
 
 ---
 
-## 4️⃣ VectorIndex (Real-Time Updating)
+## VectorIndex (Real-Time Updating)
 
 Acts as the semantic search layer.
 
@@ -126,7 +126,7 @@ Separating indexing from storage allows future replacement with scalable vector 
 
 ---
 
-## 5️⃣ MemoryStore
+## MemoryStore
 
 Central orchestrator managing message lifecycle.
 
@@ -142,7 +142,7 @@ This component acts as the system’s “source of truth.”
 
 ---
 
-## 6️⃣ EvictionStrategy (Adaptive Memory)
+## EvictionStrategy (Adaptive Memory)
 
 Maintains bounded memory size.
 
@@ -165,7 +165,7 @@ Simulates realistic forgetting patterns where irrelevant or unused information f
 
 ---
 
-## 7️⃣ Retriever (Hybrid Scoring)
+## Retriever (Hybrid Scoring)
 
 Handles query-based retrieval.
 
@@ -191,7 +191,7 @@ Semantic similarity dominates ranking, while importance and recency provide cont
 
 ---
 
-# 🔎 Relevance Strategy Explained
+# Relevance Strategy Explained
 
 The system uses a hybrid ranking approach:
 
@@ -223,7 +223,7 @@ Frequently retrieved messages influence memory retention through adaptive evicti
 
 ---
 
-# 🤖 Why Sentence Transformers?
+# Why Sentence Transformers?
 
 Sentence Transformers were selected because they:
 
@@ -236,7 +236,7 @@ Alternative approaches such as keyword matching were avoided because they fail t
 
 ---
 
-# 🔄 System Flow
+# System Flow
 
 ## Adding Chats
 
@@ -263,7 +263,7 @@ User Query
 
 ---
 
-# 📊 Demonstration Example
+# Demonstration Example
 
 ## Adding Chats
 
@@ -303,7 +303,7 @@ The query is converted to a semantic representation, and relevant past chats are
 
 ---
 
-# ✅ Key Design Decisions
+# Key Design Decisions
 
 * Hybrid relevance model for balanced retrieval.
 * Clear separation between storage and indexing.
@@ -355,7 +355,7 @@ Semantic embeddings were preferred over keyword overlap methods because:
 ---
 
 
-# 🚀 Conclusion
+# Conclusion
 
 This project demonstrates a scalable approach to conversational memory retrieval by combining semantic embeddings, contextual weighting, and adaptive memory management. The design prioritizes clarity, maintainability, and realistic memory behavior while remaining accessible and easy to extend.
 
