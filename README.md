@@ -283,41 +283,22 @@ User Query
 
 ---
 
-# Demonstration Example
+## 📊 Example Run
 
-## Adding Chats
+Below is an example output when running `python demo.py`:
 
-```
-memory.add_message(Message("Explain neural networks"))
-memory.add_message(Message("Machine learning basics"))
-memory.add_message(Message("I like pizza"))
-```
+```bash
+=== Adding Chats to Memory ===
+Chats successfully stored.
 
-Explanation:
+=== Querying System ===
+User Query: Explain AI concepts
 
-Messages are embedded automatically and stored with adaptive memory management.
-
----
-
-## Querying
-
-```
-results = retriever.retrieve("Explain AI concepts")
-```
-
-Explanation:
-
-The query is converted to a semantic representation, and relevant past chats are ranked using hybrid scoring.
-
----
-
-## Output (Example)
-
-```
+=== Top Five Relevant Chats ===
 1. Explain neural networks
-2. Machine learning basics
+2. Deep learning explanation
 3. Tell me about AI models
-4. Deep learning explanation
+4. Machine learning basics
 5. Neural networks vs traditional algorithms
 ```
 
