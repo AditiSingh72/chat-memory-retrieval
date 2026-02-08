@@ -1,5 +1,17 @@
+# Chat Memory Retrieval System
 
-# 📘 Chat Memory Retrieval System
+A Python implementation of a hybrid semantic memory system that stores conversational history and retrieves the most relevant past interactions using embeddings, adaptive memory management, and hybrid relevance scoring.
+
+## 🚀 Quick Start
+
+```bash
+
+pip install -r requirements.txt
+python demo.py
+
+```
+
+
 
 ## Overview
 
