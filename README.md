@@ -40,20 +40,40 @@ This project combines these signals into a hybrid retrieval model.
 
 ---
 
-# Architecture Overview
+## Architecture Workflow
 
-The system is divided into clearly defined components:
+```mermaid
+flowchart LR
 
-```
-Message
-    ↓
-MemoryStore
-    ↓
-Vectorizer → VectorIndex
-    ↓
-Retriever
-    ↓
-EvictionStrategy
+    %% INPUT
+    A[User Query] --> B[Retriever]
+
+    %% RETRIEVAL FLOW
+    B --> C[Vectorizer<br/>Sentence Transformers]
+    C --> D[VectorIndex<br/>Semantic Search]
+
+    %% MEMORY LAYER
+    subgraph Memory Layer
+        E[MemoryStore<br/>Message Storage]
+        F[Eviction Strategy<br/>Adaptive Pruning]
+    end
+
+    D --> E
+    E --> F
+
+    %% HYBRID SCORING
+    subgraph Hybrid Relevance Scoring
+        G[Semantic Similarity]
+        H[Importance Score]
+        I[Recency Score]
+    end
+
+    G --> B
+    H --> B
+    I --> B
+
+    %% LOOP
+    E --> D
 ```
 
 Each component has a single responsibility, ensuring clarity and extensibility.
