@@ -283,7 +283,7 @@ User Query
 
 ---
 
-## 📊 Example Run
+## Example Run
 
 Below is an example output when running `python demo.py`:
 
